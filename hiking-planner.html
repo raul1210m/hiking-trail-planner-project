@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking Trail Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-green-700 flex items-center">
+                <i class="fas fa-mountain-sun mr-2"></i>
+                <span>Hiking Trail Planner</span>
+            </div>
+            <div>
+                <button class="bg-green-600 text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition duration-300">
+                    <i class="fas fa-save mr-1"></i> Salvează Traseul
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <aside class="lg:col-span-1 bg-white p-4 rounded-lg shadow-lg h-fit">
+            <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-gray-700">Panou de Control</h2>
+            <div class="grid grid-cols-2 gap-2 mb-4">
+                <button class="bg-blue-500 text-white p-2 rounded-lg shadow hover:bg-blue-600 transition flex items-center justify-center">
+                    <i class="fas fa-play mr-1"></i> Începe
+                </button>
+                <button class="bg-red-500 text-white p-2 rounded-lg shadow hover:bg-red-600 transition flex items-center justify-center">
+                    <i class="fas fa-trash mr-1"></i> Șterge
+                </button>
+            </div>
+            <button class="w-full bg-yellow-500 text-white p-2 rounded-lg shadow hover:bg-yellow-600 transition flex items-center justify-center mb-4">
+                <i class="fas fa-map-pin mr-1"></i> Adaugă Punct de Interes
+            </button>
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold mb-2">Detalii Traseu</h3>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span>Distanță Totală:</span>
+                        <span id="distance" class="font-bold">0.0 km</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Timp Estimat:</span>
+                        <span id="time" class="font-bold">0h 0m</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Elevație Câștigată:</span>
+                        <span id="elevation-gain" class="font-bold">0 m</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Elevație Maximă:</span>
+                        <span id="elevation-max" class="font-bold">0 m</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Puncte de Interes (POI)</h3>
+                <ul id="poi-list" class="list-none space-y-2 h-48 overflow-y-auto bg-gray-50 p-3 rounded-md border">
+                    <li class="text-gray-500 italic">Niciun punct adăugat încă.</li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-2 flex flex-col gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-lg flex-grow">
+                <h2 class="text-xl font-semibold mb-3">Hartă Traseu</h2>
+                <div id="map" class="w-full h-96 min-h-[400px] bg-gray-200 rounded border border-gray-300 flex items-center justify-center text-gray-500">
+                    [Placeholder pentru Hartă Interactivă]
+                    <br>(Aici se va inițializa o bibliotecă ca Leaflet.js sau Google Maps)
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-3">Profil Elevație</h2>
+                <div id="elevation-chart" class="w-full h-48 bg-gray-200 rounded border border-gray-300 flex items-center justify-center text-gray-500">
+                    [Placeholder pentru Grafic Elevație]
+                    <br>(Aici se va inițializa o bibliotecă ca Chart.js)
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center text-gray-600 p-4 mt-6 text-sm">
+        &copy; 2025 Hiking Trail Planner. Creat cu dragoste pentru munte.
+    </footer>
+</body>
+</html>
